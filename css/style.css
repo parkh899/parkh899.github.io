@@ -1,0 +1,22 @@
+body {
+ background-color: blue;
+ font-size: 48px;
+ font-family: "Times New Roman" Helvetica, Arial, sans-serif;
+ 
+}
+
+p {
+    color:red;
+    font-weight: 18px;
+    font-size: 48px;
+}
+
+a{
+    color: red;
+    text-decoration: none;
+}
+
+#myid {
+    color: black;
+    font-sizeL 40 px
+}
