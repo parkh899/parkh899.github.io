@@ -2,7 +2,6 @@
 <head>
 <style>
 .hp{
-   shape-outside: url(../img/hp.gif);
    float: right;
    width: 30%;
    margin-right: 100px;  
@@ -20,6 +19,48 @@
     margin-right: 50px;
     margin-left: 100px;
 }
+
+.shape {
+    margin-top: 50px;
+    margin-left: 100px;
+    float: left;
+}
+
+#square {
+	width: 50px;
+	height: 50px;
+	background: red;
+	margin-left: 100px;
+}
+
+#square.two {
+	margin-left: 200px;
+}
+
+#circle {
+	width: 50px;
+	height: 50px;
+	background: green;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 50px;
+	margin-left: 200px;
+}
+#circle.two {
+	margin-left: 100px;
+}
+#triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 50px solid blue;
+	margin-left: 100px;
+}
+
+#triangle-up.two {
+	margin-left: 200px;
+}
 </style>
 </head>
 
@@ -32,7 +73,8 @@
 <hr/>
  
 <img class="hp" src="../img/hp.jpg"/>
-
+<div id="square"></div>
+<div id="square" class="two"></div>
 <div class="herin">
 Herin <mark>Herin</mark> <b>Herin</b> <em>Herin</em> <del>Herin</del> 
 Herin <mark>Herin</mark> <b>Herin</b> <em>Herin</em> <del>Herin</del> 
@@ -60,6 +102,8 @@ Herin <mark>Herin</mark> <b>Herin</b> <em>Herin</em> <del>Herin</del>
 Herin <mark>Herin</mark> <b>Herin</b> <em>Herin</em> <del>Herin</del> 
 </div>
 
+<div id="circle"></div>
+<div id="circle" class="two"></div>
 
 <div class="park">
 <font size="1">Park</font> <font size="2">Park</font> <font size="3">Park</font> <font size="4">Park</font> <font size="5">Park</font> <font size="6">Park</font> <font size="7">Park</font> <font size="6">Park</font> <font size="5">Park</font> <font size="4">Park</font> <font size="3">Park</font> <font size="2">Park</font> 
@@ -72,10 +116,10 @@ Herin <mark>Herin</mark> <b>Herin</b> <em>Herin</em> <del>Herin</del>
 <font size="1">Park</font> <font size="2">Park</font> <font size="3">Park</font> <font size="4">Park</font> <font size="5">Park</font> <font size="6">Park</font> <font size="7">Park</font> <font size="6">Park</font> <font size="5">Park</font> <font size="4">Park</font> <font size="3">Park</font> <font size="2">Park</font> 
 <font size="1">Park</font> <font size="2">Park</font> <font size="3">Park</font> <font size="4">Park</font> <font size="5">Park</font> <font size="6">Park</font> <font size="7">Park</font> <font size="6">Park</font> <font size="5">Park</font> <font size="4">Park</font> <font size="3">Park</font> <font size="2">Park</font> 
 <font size="1">Park</font> <font size="2">Park</font> <font size="3">Park</font> <font size="4">Park</font> <font size="5">Park</font> <font size="6">Park</font> <font size="7">Park</font> <font size="6">Park</font> <font size="5">Park</font> <font size="4">Park</font> <font size="3">Park</font> <font size="2">Park</font> 
-
-
-
 </div>
+
+<div id="triangle-up"></div>
+<div id="triangle-up" class="two"></div>
 
 </body>
 </html>
