@@ -1,0 +1,108 @@
+<html>
+<head>
+<style>
+td {
+    padding: 10px;
+}
+
+img {
+    width:130px;
+    height:130px;
+}
+
+a:link {
+    text-decoration: none;
+	font-family: vrinda, arial, "Times New Roman", Times, serif;
+	font-size: 12px;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+</style>
+<script>
+function setCategory(category) {
+	localStorage.setItem("category", category);
+}
+</script>
+</head>
+
+<body>
+<center>
+<table height="100%">
+<tr>
+<td valign="middle">
+
+<table>
+	<tr>
+	  <td>
+		<img src="img/spacer.gif">
+	  </td>
+	  <td>
+		<img src="img/spacer.gif">
+	  </td>
+	  <td align="right" valign="top">
+		<a href="index.html">HOME</a>
+	  </td>  
+	  <td>
+		<a href="display.html" onclick="setCategory('bot')"><img src="img/image0.gif" onmouseover="this.src='img/exp_both.gif';" onmouseout="this.src='img/image0.gif';"></a>
+	  </td>  
+	</tr>
+	<tr>
+	  <td>
+		<img src="img/exp_e1.gif" onmouseover="this.src='img/image0h.gif';" onmouseout="this.src='img/exp_e1.gif';">
+	  </td>
+	  <td>
+		<img src="img/exp_x.gif" onmouseover="this.src='img/image0h.gif';" onmouseout="this.src='img/exp_x.gif';">
+	  </td>
+	  <td>
+		<img src="img/exp_p.gif" onmouseover="this.src='img/image0h.gif';" onmouseout="this.src='img/exp_p.gif';">
+	  </td>
+	  <td>
+		<img src="img/image0.gif" onmouseover="this.src='img/image0h.gif';" onmouseout="this.src='img/image0.gif';">
+	  </td>  
+	</tr>
+	<tr>
+	  <td>
+		<a href="display.html" onclick="setCategory('top')"><img src="img/image0.gif" onmouseover="this.src='img/exp_toph.gif';" onmouseout="this.src='img/image0.gif';"></a>
+	  </td>
+	  <td>
+		<img src="img/exp_l.gif" onmouseover="this.src='img/image0h.gif';" onmouseout="this.src='img/exp_l.gif';">
+	  </td>
+	  <td>
+		<img src="img/exp_o.gif" onmouseover="this.src='img/image0h.gif';" onmouseout="this.src='img/exp_o.gif';">
+	  </td>
+	  <td>
+		<img src="img/image0.gif" onmouseover="this.src='img/image0h.gif';" onmouseout="this.src='img/image0.gif';">
+	  </td>  
+	</tr>
+	<tr>
+	  <td>
+		<img src="img/image0.gif" onmouseover="this.src='img/image0h.gif';" onmouseout="this.src='img/image0.gif';">
+	  </td>
+	  <td>
+		<a href="display.html" onclick="setCategory('acc')"><img src="img/image0.gif" onmouseover="this.src='img/exp_acch.gif';" onmouseout="this.src='img/image0.gif';"></a>
+	  </td>
+	  <td>
+		<img src="img/exp_r.gif" onmouseover="this.src='img/image0h.gif';" onmouseout="this.src='img/exp_r.gif';">
+	  </td>
+	  <td>
+		<img src="img/exp_e2.gif" onmouseover="this.src='img/image0h.gif';" onmouseout="this.src='img/exp_e2.gif';">
+	  </td>
+	</tr>
+</table>
+
+</td>
+</tr>
+</table>
+<center>
+</body>
+</html>

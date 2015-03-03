@@ -1,0 +1,124 @@
+<html>
+<head>
+<style>
+td {
+    padding: 10px;
+}
+
+img.grid {
+    width:130px;
+    height:130px;
+}
+
+a:link {
+    text-decoration: none;
+	font-family: vrinda, arial, "Times New Roman", Times, serif;
+	font-size: 12px;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+#position {
+	font-family: vrinda, arial, "Times New Roman", Times, serif;
+	font-size: 12px;
+}
+</style>
+<script type='text/javascript' src='js/jquery-2.1.3.js'></script>
+<script>
+var dispImages = {"top": 6, "bottom": 2, "accessory": 2};
+var onDisplay = 1;
+var noOfImages = 1;
+
+$( document ).ready(function() {
+	var category = localStorage.category;
+	if (category == "top") {
+		noOfImages = dispImages.top;
+	} else if (category == "bot") {
+		noOfImages = dispImages.bottom;
+	} else if (category == "acc") {
+		noOfImages = dispImages.accessory;
+	}
+	// display category image, top, bottom, or accessory
+	$("#tgtImage").attr("src","img/exp_" + category + "h.gif");
+	
+	// display the first image on that category
+	$("#dispImage").attr("src","img/disp_" + category + onDisplay + ".gif");
+	
+	// display which image you display
+	$("#position").html(onDisplay + " / " + noOfImages);
+	
+	// display next images
+	$("#next").click( function() {
+		if (onDisplay < noOfImages) {
+			onDisplay += 1;
+			$("#dispImage").attr("src","img/disp_" + category + onDisplay + ".gif");
+			$("#position").html(onDisplay + " / " + noOfImages);
+		}		 
+	});
+
+	// display previous images
+	$("#prev").click( function() {
+		if (onDisplay > 1) {
+			onDisplay -= 1;
+			$("#dispImage").attr("src","img/disp_" + category + onDisplay + ".gif");
+			$("#position").html(onDisplay + " / " + noOfImages);
+		}		 
+	});	
+
+	// also display next images when the image is clicked
+	$("#dispImage").click( function() {
+		if (onDisplay < noOfImages) {
+			onDisplay += 1;
+			$("#dispImage").attr("src","img/disp_" + category + onDisplay + ".gif");
+			$("#position").html(onDisplay + " / " + noOfImages);
+		}		 
+	});	
+});
+</script>
+</head>
+
+<body>
+<center>
+<table height="100%">
+<tr>
+<td valign="middle">
+
+<table>
+	<tr>
+	  <td align="right" valign="top" width="434px">
+		<a href="index.html">HOME</a><br/>
+		<a href="explore.html">BACK</a><br/><br/>
+		<a id="next" href="#">NEXT</a><br/>
+		<a id="prev" href="#">PREVIOUS</a><br/><br/>
+		<span id="position"></span>
+	  </td>  
+	  <td>
+		<img class="grid" id="tgtImage" src="img/image0.gif">
+	  </td>  
+	</tr>
+	<tr>
+	  <td valign="top" height="454">
+		<img  align="right" id="dispImage" src="img/disp_filler.gif">
+	  </td>
+	  <td valign="top">
+		<img id="dispImage" src="img/disp_vfiller.gif">
+	  </td>  
+	</tr>
+</table>
+
+</td>
+</tr>
+</table>
+<center>
+</body>
+</html>
