@@ -1,0 +1,199 @@
+<html>
+<head>
+<style>
+td {
+    padding: 10px;
+}
+
+img {
+    width:100px;
+    height:100px;
+	opacity: 0.9
+}
+img.enlarge:hover {
+    width:100px;
+    height:100px;
+	opacity:0.7;
+
+}
+a:link {
+    text-decoration: none;
+	font-family: vrinda, arial, "Times New Roman", Times, serif;
+	font-size: 18px;
+	color: lightgray;
+}
+
+a:visited {
+    text-decoration: none;
+	color: lightgray;
+}
+
+a:hover {
+    text-decoration: none;
+	color: gray;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+td {
+	text-align: center;
+}
+
+p.memory {
+	color: lightgray;
+	font-family: Times, serif;
+	font-style: italic;
+	font-size: 14px;
+}
+
+td.memory {
+	width: 320px;
+	height: 100px;
+}
+</style>
+<script type='text/javascript' src='js/jquery-2.1.3.js'></script>
+<script>
+var memories = [
+	'Old navy denim hand me down from Dad "Dad, can I have this?"',
+	'"Hey Herin, I got this for you." One of the warmest ...',
+	'Chilling at home wearing this sweater with my PJ\'s , pairing this sweater with ...',
+	'I remember when I first discovered this sweater in my mom\'s closet, I was so excited that I found it.',
+	'Something I bought with my own money that I am proud of ...',
+	'"Herin I really like your sweater" -RY',
+	'Bought this scarf when I was obsessed with scarves ...',
+	'My favorite sweater that I own at the moment. First time I wore it, my friend wore ...'
+];
+
+$( document ).ready(function() {
+	var category = localStorage.category;
+	
+	$(".title").click( function() {
+	  var positions = threeRandomNumbers(1,13);
+	  var curMemories = threeRandomNumbers(1,7);
+	  var i;
+	  for (i=0; i<positions.length; i++) {
+	    var html = '';
+		var position = positions[i];
+		var curMemory = curMemories[i];
+		html += '<a href="caart_disp2.html" onclick="setCategory(' + (curMemory + 1)  + ')">';
+		html += '<p class="memory">' + memories[curMemory] + '</p>';
+		html += '</a>'
+		
+		$(".mem" + position).html(html);
+	  }
+	});
+	
+});
+
+function setCategory(category) {
+	localStorage.setItem("category", category);
+}
+
+// I borrowd this function from the internet (http://stackoverflow.com/)
+function threeRandomNumbers(start, end) {
+	var limit = 3,
+		amount = 3,
+		lower_bound = start,
+		upper_bound = end,
+		unique_random_numbers = [];
+
+	if (amount > limit) limit = amount; //Infinite loop if you want more unique
+										//Natural numbers than existemt in a
+										// given range
+	while (unique_random_numbers.length < limit) {
+		var random_number = Math.round(Math.random()*(upper_bound - lower_bound) + lower_bound);
+		if (unique_random_numbers.indexOf(random_number) == -1) { 
+			// Yay! new random number
+			unique_random_numbers.push( random_number );
+		}
+	}
+	return unique_random_numbers;
+}
+
+</script>
+</head>
+
+<body bgcolor="black">
+<center>
+<table height="100%">
+<tr>
+<td valign="middle">
+
+<table>
+	<tr>
+		<td class="memory">
+			<div class="mem1"><div>			
+		</td>
+		<td class="memory" colspan="3">
+			<div class="mem2"><div>	
+		</td>
+		<td class="memory">
+			<div class="mem3"><div>	
+		</td>
+	</tr>
+	<tr>
+		<td class="memory">
+			<div class="mem4"><div>
+		</td>
+		<td class="memory" colspan="3">
+			<div class="mem5"><div>
+		</td>
+		<td class="memory">
+		  <div class="mem6"><div>
+		</td>
+	</tr>
+	<tr>
+		<td class="memory">
+			<div class="mem7"><div>
+		</td>
+		<td>
+			<img class="enlarge" src="img/black.gif"/>
+		</td>
+		<td>
+			<a href="#"><div class="title">MEMORIES</div></a>
+		</td>
+		<td>
+			<img class="enlarge" src="img/black.gif"/>
+		</td>  
+	  	<td class="memory">
+			<div class="mem8"><div>
+		</td>
+	</tr>
+	<tr>
+		<td class="memory">
+			<div class="mem9"><div>
+		</td>	  
+		<td align="right" valign="top">
+		  <img class="enlarge" src="img/exp6.gif"/>
+	    </td>
+	    <td valign="top">
+		  <img class="enlarge" src="img/exp11.gif"/>
+	    </td>
+	    <td valign="bottom">
+		  <img class="enlarge" src="img/exp1.gif"/>
+	    </td> 
+		<td class="memory">
+			<div class="mem10"><div>
+		</td>	  
+	 </tr>
+	<tr>
+		<td class="memory">
+			<div class="mem11"><div>
+		</td>
+		<td  class="memory" colspan="3">
+			<div class="mem12"><div>
+		</td>
+		<td width="320px" height="100px">
+			<div class="mem13"><div>
+		</td>
+	</tr>
+</table>
+
+</td>
+</tr>
+</table>
+<center>
+</body>
+</html>
