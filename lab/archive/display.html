@@ -1,0 +1,95 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Selectable - Default functionality</title> 
+  <style>
+  table {
+ 	border-spacing: 5px; 
+  }
+  
+  img {
+	margin 5px;
+  }
+  
+  .imgWork { 
+	height: 500px; 
+	border-style: solid; 
+	border-width: 3px; 
+	border-color: gray;
+  }
+    
+  .workText { 
+	color: lightgray;
+	font-family: Sans-serif; 
+	font-size: 12px;
+	margin-right: 10px;
+  }
+  
+  a:link {
+    text-decoration: none;
+	font-family: vrinda, arial, "Times New Roman", Times, serif;
+	font-size: 12px;
+	color: lightgray;
+  }
+
+  a:visited {
+    text-decoration: none;
+	color: lightgray;
+  }
+
+  a:hover {
+    text-decoration: none;
+	color: gray;
+  }
+
+  a:active {
+    text-decoration: none;
+  }
+  </style>
+  
+  <link rel="icon" href="favicon.jpg" sizes="16x16 32x32" type="image/jpg">
+  <script type='text/javascript' src='js/jquery-2.1.3.js'></script>
+  
+  <script>
+
+  $(function() {
+	var work = JSON.parse(localStorage.work);
+	var html = "";
+	
+	html += "<img class='imgWork' src='img/" + work.id + ".gif' />";
+	console.debug(html);
+    $("#work").html(html);
+	$("#title").html(work.title);
+	$("#author").html("By " + work.author);
+	$("#source").html("<a target='source' href='view-source:" + work.link + "'>View Source</a>");
+  }); 
+  </script>
+</head>
+<body bgcolor="black">
+
+<table width="100%" height="100%">
+<tr>
+<td align="center" valign="center">
+
+<table>
+<tr>
+  <td width="80%" align="center" valign="center">
+    <div id='work'><img class='imgWork' src='img/cover.gif'/></div><br/>
+  </td>
+  <td width="1%">
+  </td>
+  <td width="20%" valign="top">
+	<a href="archive.html">ARCHIVE</a><br/><br/>
+	<span id="title" class="workText">Unknown</span><br/>
+	<span id="author" class="workText">By Anonymous</span><br/><br/><br/>
+	<span id="source" class="workText"></span>
+  </td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+ 
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Archive</title>
+ 
+  <style>
+  img.thumbnail { width: 70px; height: 70px; margin: 5px; border-style: solid; border-color: lightgray 
+  }
+  
+  table {
+	margin-top: 5%;
+	margin-left: 38%;
+	border-spacing: 5px;
+  }
+  
+  a:link {
+    text-decoration: none;
+	font-family: vrinda, arial, "Times New Roman", Times, serif;
+	font-size: 18px;
+	color: lightgray;
+  }
+
+  a:visited {
+    text-decoration: none;
+	color: lightgray;
+  }
+
+  a:hover {
+    text-decoration: none;
+	color: gray;
+  }
+
+  a:active {
+    text-decoration: none;
+  }
+  </style>
+  
+  <link rel="icon" href="favicon.jpg" sizes="16x16 32x32" type="image/jpg"> 
+  <script type='text/javascript' src='js/jquery-2.1.3.js'></script>
+  
+  <script>
+  var works = [
+	{ id: "kb", idnum: 647, author: "Kyle Brady", title: "Unknown", link: "http://bradk647.github.io/composition/index.html"},
+	{ id: "ec", idnum: 767, author: "Eva Cruz", title: "Unknown", link: "http://cruze767.github.io/lab/composition/composition2.html"},
+	{ id: "md", idnum: 568, author: "Megan Dias", title: "Unknown", link: "http://diasm568.github.io/lab/composition.html"},
+	{ id: "td", idnum: 384, author: "Theresa Duemler", title: "Unknown", link: "http://duemt384.github.io/composition1/composition1.html"},
+	{ id: "jh", idnum: 871, author: "Jasmine Hong", title: "Unknown", link: "http://hongj871.github.io/"},
+	{ id: "zh", idnum: 488, author: "Zhiyan Huang", title: "Unknown", link: "http://huanz488.github.io/#"},
+	{ id: "uj", idnum: 42, author: "Urvita Jhaveri", title: "Unknown", link: "http://jhavu042.github.io/lab/composition2/index.html"},
+	{ id: "lk", idnum: 508, author: "Lika Kumnoyo", title: "Unknown", link: "http://kumol508.github.io/Lab/composition2.html"},
+	{ id: "sm", idnum: 631, author: "Simen Meyer", title: "Unknown", link: "http://meyes631.github.io/composition/index_revised.html"},
+	{ id: "ko", idnum: 455, author: "Kamila Ortiz", title: "Unknown", link: "http://ortik455.github.io/lab/compositiontwo.html"},
+	{ id: "hp", idnum: 899, author: "Herin Park", title: "Unknown", link: "http://parkh899.github.io/lab/composition3.html"},
+	{ id: "sp", idnum: 326, author: "Sera Pena", title: "Unknown", link: "http://penas326.github.io/lab/revisedcomposition/index.html"},
+	{ id: "cp", idnum: 165, author: "Conny Pinto", title: "Unknown", link: "http://connypinto.github.io/classwork/composition2.html"},
+	{ id: "ur", idnum: 225, author: "Urvi Raghbeer", title: "Unknown", link: "http://raghu225.github.io/composition/index1.html"},
+	{ id: "ls", idnum: 881, author: "Lauren Stein", title: "Unknown", link: "http://steil881.github.io/lab/composition/revision/index.html"},
+	{ id: "vy", idnum: 473, author: "Vivian Yang", title: "Unknown", link: "http://yangv473.github.io/comp2.html"},
+	{ id: "jz", idnum: 122, author: "Jasmine Zhang", title: "Unknown", link: "http://zhanj122.github.io/composition/composition_revised/composition2_revised.html"}
+  ];
+  
+  var pattern = [
+	[899,881,871,767,647],
+	[0,631,568,508,488],
+	[0,0,473,455,384],
+	[0,0,0,326,225],
+	[0,0,0,165,122],
+	[0,0,0,0,42]
+  ];
+    
+  $(function() {
+	tableCreate();
+  });
+  
+  function storeSelection(idnum) {
+	var myWork = getWork(idnum);
+	localStorage.setItem("work", JSON.stringify(myWork));
+  }
+  
+  function getWork(idnum) {
+	var i;
+	var work = null;
+	for (i=0; i< works.length; i++) {
+		if (works[i].idnum == idnum) {
+			work = works[i];
+			break;
+		} 	
+	}
+	return work;	
+  }  
+  
+  function tableCreate(){
+    var body = document.body,
+    tbl  = document.createElement('table');
+
+    for(var i = 0; i<pattern.length; i++){
+        var tr = tbl.insertRow();
+        for(var j = 0; j < pattern[i].length; j++){
+            var td = tr.insertCell();
+			td.style.margin = '10px';
+			td.style.width = '80px';
+			td.style.height = '80px';
+			td.align = 'center';
+			if (pattern[i][j] == 0) {
+				td.appendChild(document.createTextNode(''));
+			} else {
+				var idnum = pattern[i][j];
+				var idnumFix = idnum < 100 ? '0' + idnum : idnum
+				var inText = "<a href='display.html' onclick='storeSelection(" + idnum + ")'>" + idnumFix + "<a>";
+				td.innerHTML = inText;
+				td.style.border = "1px solid lightgray";
+			}            
+        }
+    }
+    body.appendChild(tbl);
+  }
+  </script>
+</head>
+<body bgcolor="black">
+</body>
+</html>
