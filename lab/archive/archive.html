@@ -4,13 +4,34 @@
   <title>Archive</title>
  
   <style>
-  img.thumbnail { width: 70px; height: 70px; margin: 5px; border-style: solid; border-color: lightgray 
+  img.thumbnail { 
+	width: 120px; 
+	height: 105px; 
+	margin: 1px; 
+  }
+ 
+  .pagetitle {
+	color: lightgray;
+	font-size: 28px;
+	font-family: vrinda, arial, "Times New Roman", Times, serif;
+  }
+  
+  .displayText {
+	color: lightgray;
+	font-size: 13px;
+	font-family: vrinda, arial, "Times New Roman", Times, serif;
   }
   
   table {
-	margin-top: 5%;
-	margin-left: 15%;
+	margin-top: 2%;
+	margin-left: 17%;
 	border-spacing: 5px;
+  }
+
+  table.display {
+	margin-top: 5%;
+	margin-left: 17%;
+	border-spacing: 10px;
   }
   
   a:link {
@@ -40,29 +61,29 @@
   
   <script>
   var works = [
-	{ id: "kb", idnum: 647, author: "Kyle Brady", title: "Unknown", link: "http://bradk647.github.io/composition/index.html"},
-	{ id: "ec", idnum: 767, author: "Eva Cruz", title: "Unknown", link: "http://cruze767.github.io/lab/composition/composition2.html"},
-	{ id: "md", idnum: 568, author: "Megan Dias", title: "Unknown", link: "http://diasm568.github.io/lab/composition.html"},
-	{ id: "td", idnum: 384, author: "Theresa Duemler", title: "Unknown", link: "http://duemt384.github.io/composition1/composition1.html"},
-	{ id: "jh", idnum: 871, author: "Jasmine Hong", title: "Unknown", link: "http://hongj871.github.io/"},
-	{ id: "zh", idnum: 488, author: "Zhiyan Huang", title: "Unknown", link: "http://huanz488.github.io/#"},
-	{ id: "uj", idnum: 42, author: "Urvita Jhaveri", title: "Unknown", link: "http://jhavu042.github.io/lab/composition2/index.html"},
-	{ id: "lk", idnum: 508, author: "Lika Kumnoyo", title: "Unknown", link: "http://kumol508.github.io/Lab/composition2.html"},
-	{ id: "sm", idnum: 631, author: "Simen Meyer", title: "Unknown", link: "http://meyes631.github.io/composition/index_revised.html"},
-	{ id: "ko", idnum: 455, author: "Kamila Ortiz", title: "Unknown", link: "http://ortik455.github.io/lab/compositiontwo.html"},
-	{ id: "hp", idnum: 899, author: "Herin Park", title: "Unknown", link: "http://parkh899.github.io/lab/composition3.html"},
-	{ id: "sp", idnum: 326, author: "Sera Pena", title: "Unknown", link: "http://penas326.github.io/lab/revisedcomposition/index.html"},
-	{ id: "cp", idnum: 165, author: "Conny Pinto", title: "Unknown", link: "http://connypinto.github.io/classwork/composition2.html"},
-	{ id: "ur", idnum: 225, author: "Urvi Raghbeer", title: "Unknown", link: "http://raghu225.github.io/composition/index1.html"},
-	{ id: "ls", idnum: 881, author: "Lauren Stein", title: "Unknown", link: "http://steil881.github.io/lab/composition/revision/index.html"},
-	{ id: "vy", idnum: 473, author: "Vivian Yang", title: "Unknown", link: "http://yangv473.github.io/comp2.html"},
-	{ id: "jz", idnum: 122, author: "Jasmine Zhang", title: "Unknown", link: "http://zhanj122.github.io/composition/composition_revised/composition2_revised.html"}
+	{ id: "kb", idnum: 647, author: "Kyle Brady", title: "Unknown Title", email: "bradk647@newschool.edu", link: "http://bradk647.github.io/composition/index.html"},
+	{ id: "ec", idnum: 767, author: "Eva Cruz", title: "Unknown Title", email: "cruze767@newschool.edu", link: "http://cruze767.github.io/lab/composition/composition2.html"},
+	{ id: "md", idnum: 568, author: "Megan Dias", title: "Unknown Title", email: "diasm568@newschool.edu", link: "http://diasm568.github.io/lab/composition.html"},
+	{ id: "td", idnum: 384, author: "Theresa Duemler", title: "Unknown Title", email: "deumtlink384@newschool.edu", link: "http://duemt384.github.io/composition1/composition1.html"},
+	{ id: "jh", idnum: 871, author: "Jasmine Hong", title: "Unknown Title", email: "hongj871@newschool.edu", link: "http://hongj871.github.io/"},
+	{ id: "zh", idnum: 488, author: "Zhiyan Huang", title: "Unknown Title", email: "huanz488@newschool.edu", link: "http://huanz488.github.io/#"},
+	{ id: "uj", idnum: 42, author: "Urvita Jhaveri", title: "Unknown Title", email: "jhavu042@newschool.edu", link: "http://jhavu042.github.io/lab/composition2/index.html"},
+	{ id: "lk", idnum: 508, author: "Lika Kumnoyo", title: "Unknown Title", email: "kumnl508@newschool.edu", link: "http://kumol508.github.io/Lab/composition2.html"},
+	{ id: "sm", idnum: 631, author: "Simen Meyer", title: "Unknown Title", email: "meyes631@newschool.edu", link: "http://meyes631.github.io/composition/index_revised.html"},
+	{ id: "ko", idnum: 455, author: "Kamila Ortiz", title: "Unknown Title", email: "ortik455@newschool.edu", link: "http://ortik455.github.io/lab/compositiontwo.html"},
+	{ id: "hp", idnum: 899, author: "Herin Park", title: "Unknown Title", email: "parkh899@newschool.edu", link: "http://parkh899.github.io/lab/composition3.html"},
+	{ id: "sp", idnum: 326, author: "Sera Pena", title: "Unknown Title", email: "penas326@newschool.edu", link: "http://penas326.github.io/lab/revisedcomposition/index.html"},
+	{ id: "cp", idnum: 165, author: "Conny Pinto", title: "Unknown Title", email: "pintc165@newschool.edu", link: "http://connypinto.github.io/classwork/composition2.html"},
+	{ id: "ur", idnum: 225, author: "Urvi Raghbeer", title: "Unknown Title", email: "raghu225@newschool.edu", link: "http://raghu225.github.io/composition/index1.html"},
+	{ id: "ls", idnum: 881, author: "Lauren Stein", title: "Unknown Title", email: "steil881@newschool.edu", link: "http://steil881.github.io/lab/composition/revision/index.html"},
+	{ id: "vy", idnum: 473, author: "Vivian Yang", title: "Unknown Title", email: "yangv473@newschool.edu", link: "http://yangv473.github.io/comp2.html"},
+	{ id: "jz", idnum: 122, author: "Jasmine Zhang", title: "Unknown Title", email: "zhanj122@newschool.edu", link: "http://zhanj122.github.io/composition/composition_revised/composition2_revised.html"}
   ];
   
   var pattern = [
-	[899,767,643,568,488,384,225,165,42],
+	[899,767,647,568,488,384,225,165,42],
 	[881,0,631,508,473,326,0,122,0],
-	[871,0,0,0,0,455,0,0,0]
+	[871,0,0,0,455,0,0,0,0]
   ];
   
   var pattern1 = [
@@ -95,6 +116,24 @@
 	localStorage.setItem("work", JSON.stringify(myWork));
   }
   
+  function displaySelection(idnum) {
+	var myWork = getWork(idnum);
+	$("#title").html(myWork.title);
+	$("#author").html(myWork.author);
+	$("#thumbnail").attr("src","img/" + myWork.id + ".gif");
+	$("#thumbnail").css("border-style","solid");
+	$("#thumbnail").css("border-width","1px");
+	$("#thumbnail").css("border-color","lightgray");
+  }
+
+  function hideSelection(idnum) {
+	var myWork = getWork(idnum);
+	$("#title").html('');
+	$("#author").html('');
+	$("#thumbnail").attr("src","img/spacer_black.gif");
+	$("#thumbnail").css("border-style","none");
+  }
+  
   function getWork(idnum) {
 	var i;
 	var work = null;
@@ -110,7 +149,8 @@
   function tableCreate(){
     var body = document.body,
     tbl  = document.createElement('table');
-
+	tbl.class = 'index';
+	
     for(var i = 0; i<pattern.length; i++){
         var tr = tbl.insertRow();
         for(var j = 0; j < pattern[i].length; j++){
@@ -124,16 +164,31 @@
 			} else {
 				var idnum = pattern[i][j];
 				var idnumFix = idnum < 100 ? '0' + idnum : idnum
-				var inText = "<a href='display.html' onclick='storeSelection(" + idnum + ")'>" + idnumFix + "<a>";
+				var inText = "<a href='display.html' onmouseover='displaySelection(" + idnum + ")' onmouseout='hideSelection(" + idnum + ")' onclick='storeSelection(" + idnum + ")'>" + idnumFix + "<a>";
 				td.innerHTML = inText;
 				td.style.border = "1px solid lightgray";
 			}            
         }
     }
     body.appendChild(tbl);
+	//body.insertBefore(tbl, document.body.firstChild);
   }
   </script>
 </head>
 <body bgcolor="black">
+	<table class="display" width="815px">
+	<tr>
+	<td valign="bottom" height="115">
+		<span class="pagetitle">Lab Composition Archive</span>
+	</td>
+	<td align="right" valign="bottom" width="300px">
+		<span class="displayText" id="title"></span><br/>
+		<span class="displayText" id="author"></span>
+	</td>
+	<td width="110">
+		<img class="thumbnail" id="thumbnail" src="img/spacer_black.gif"/>
+	</td>
+	</td>
+	</table>
 </body>
 </html>
