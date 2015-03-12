@@ -63,6 +63,7 @@
 	$("#title").html(work.title);
 	$("#author").html("By " + work.author);
 	$("#email").html(work.email);
+	$("#composition").html("<a target='blank' href='" + work.link + "'>Composition Link</a>");
 	$("#source").html("<a target='source' href='view-source:" + work.link + "'>View Source</a>");
   }); 
   </script>
@@ -85,6 +86,7 @@
 	<span id="title" class="workText">Unknown</span><br/>
 	<span id="author" class="workText">By Anonymous</span><br/>
 	<span id="email" class="workText"></span><br/><br/><br/>
+	<span id="composition" class="workText"></span><br/>
 	<span id="source" class="workText"></span>
   </td>
 </tr>
