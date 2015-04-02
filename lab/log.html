@@ -20,17 +20,24 @@
 
 function runLog() {
 	var i, j, z;
+	//start with gap 2
 	z = 2;
+	// make 50 lines
 	for (i=0; i<50; i++) {
+		//line number: add 0 as prefix when number is less than 10 to make the line length the same
 		var pattern = i<10 ? "0" + i + " " : i + " ";
+		// make each like length 80
 		for (j=0; j<80; j++) {
+			// for every zth print start otherwise print dash
 			if (j % z == 0)
-				pattern += '*';
+				pattern += '*'; //add star to a line
 			else
-				pattern += '-';
+				pattern += '-'; //add dash to a like
 		}
+		//now print the line
 		console.log(pattern);
-		z += (i % 3);
+		//increase the gap by 1
+		z += 1;
 	}
 }
 
@@ -39,23 +46,29 @@ function runLog() {
 //
 
 function runLog2() {
-	var i, j, z;
-	var z = 2;
+	var i, j;
+	//get component 1 and 2 from the webpage input
 	var comp1 = $("#comp1").val();
 	var comp2 = $("#comp2").val();
+	//make pattern length 40
 	for (i=0; i<40; i++) {
+		//line number: add 0 as prefix when number is less than 10 to make the line length the same
 		var pattern = i<10 ? "0" + i + " " : i + " ";
-		//alert(pattern);
+		//get one line of pattern by providing comp1 and 2
 		pattern += line_gen(i % 2, comp1, comp2);
+		//print a line
 		console.log(pattern);
-		z += 1;
 	}
 }
 
 function line_gen(idx, comp1, comp2) {
+	//line lendth to be 80
 	var length = 80;
+	//start with empty line
 	var pattern = "";
+	//when index is even number, add comp1 first then comp2
 	if (idx == 0 ) {
+		//make a line by adding comp1 and comp2 until the length of the line
 		for (j=0; j<length; j++) {
 			if (j % 2 == 0)
 				pattern += comp1;
@@ -63,15 +76,15 @@ function line_gen(idx, comp1, comp2) {
 				pattern += comp2;
 		}
 		return pattern;
+	//when inde is odd number, add comp2 first then comp1
 	} else if (idx == 1) {
+		//make a line by adding comp2 and compt1 until the length of the line
 		for (j=0; j<length; j++) {
 			if (j % 2 == 0)
 				pattern += comp2;
 			else
 				pattern += comp1;
-		}	
-		return pattern;
-	} else if (idx == 3) {
+		}
 		return pattern;
 	}
 }
@@ -80,18 +93,23 @@ function line_gen(idx, comp1, comp2) {
 // Log Pattern 3
 //
 
+//three pre-defined pattern
 pattern1 = [[0,0,1,0],[0,2,0,3],[1,0,0,0],[0,3,0,2]];
 pattern2 = [[0,0,4,4,0],[0,4,0,0,4],[4,0,0,0,0],[4,0,0,0,0],[0,4,0,0,4]];
 pattern3 = [[0,0,0,5,0,0],[0,0,2,0,3,0],[0,2,0,0,0,3],[5,0,0,0,0,0]];
 
 function runLog3() {
+	//number of repeat of a pattern to y direction
     var pat_x = 20;
+    //number of repeat of a pattern to x direction
     var pat_y = 5;
     var x, y, i, j, no;
 	
+	//get radio button value from the webpage input
 	var myRadio = $('input[name=pattern]');
 	var checkedValue = myRadio.filter(':checked').val();
-	   
+	
+	//depending on whcih pattern a user select, assign pre-defined pattern
 	if (checkedValue == 1)
 		pattern = pattern1;
 	else if (checkedValue == 2)
@@ -99,21 +117,28 @@ function runLog3() {
 	else if (checkedValue == 3)
 		pattern = pattern3
 
+	//set line number 0
 	no = 0;
-    for (y=0; y<5; y++) {  
+	//repeat pattern pat_y times on y direction
+    for (y=0; y<pat_y; y++) {  
+    	//draw y direction pattern pre-defined
 		for (j=0; j<pattern.length; j++) {
+			//line number: add 0 as prefix when number is less than 10 to make the line length the same
 			var line = no < 10 ? "0" + (no++) + ": " : (no++) + ": ";
-			for (x=0; x<pat_x; x++) {                                              
+			//repeat pattern pat_x times on x direction
+			for (x=0; x<pat_x; x++) {     
+				//draw x direction pattern pre-defined
 				for (i=0; i<pattern[j].length; i++) {
-					line += get_comp(pattern[j][i]);
+					line += get_component(pattern[j][i]);
 				}                             
 			}
 			console.log(line);
 		}	
     }
 }
- 
-function get_comp(idx) {
+
+//based on component index given, return corresponding element
+function get_component(idx) {
     if (idx == 0) return " ";
     else if (idx == 1) return "-";
     else if (idx == 2) return "/";
