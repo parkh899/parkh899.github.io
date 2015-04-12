@@ -8,6 +8,7 @@
 .zoom-org { zoom: 100%; }
 .zoom { zoom: 110%; }
 .zoom-lg { zoom: 140%; }
+.alphabet { zoom: 100%; }
 
 .song { zoom: 90%; }
 .song-long { zoom: 90%; }
@@ -17,13 +18,63 @@
 .welcome-section { background-color: #8B008B; width: 95%; }
 .font-section { background-color: teal; width: 95%; }
 .word-section { background-color: #B9264F; width: 95%; }
-.song-section { background-color:  #0174DF; width: 95%; }
+.song-section { background-color: #0174DF; width: 95%; }
+.lab-section { background-color: #996600; width: 95%; }
+
+.keyboard td { border: 1px solid dimgray; padding: 5px; text-align: center; cursor: pointer; font-family: Arial, Sans-serif; background-color: lightgray; font-weight: bold; font-size: 1.2em }
+.piano-keyboard { cursor: pointer; font-family: Sans-serif; }
+
+.message {font-family: Sans-serif; color: lightgray; font-weight: bold; font-size: 1.2em}
 
 </style>
 <script src="lib/js/jquery-2.1.3.min.js"></script>
 <script>
+var firstFont, firstSong;
+
+$(function() {
+	$("#alphabets").hide();
+	$("#fontContent").html("<td class='message'><p>Make your own Xylo-words to see and hear!</p></td>");
+	$("#songContent").html("<td class='message'><p>Make your own music with Xylofont!</p></td>");
+	firstFont = true;
+	firstSong = true;
+});
+
 function play(name) {
 	$("#sound-" + name)[0].play();
+}
+
+function addFont(name) {
+	if (firstFont) {
+		clearFont();
+		firstFont = false;
+	}
+	
+	var html = $("#fontContent").html();
+	
+	html += "<td>" + $("#" + name).html() + "</td>";
+	console.debug("Font " + name + " : " + html);
+	$("#fontContent").html(html);
+}
+
+function clearFont() {
+	$("#fontContent").html("");
+}
+
+function addSong(name) {
+	if (firstSong) {
+		clearSong();
+		firstSong = false;
+	}
+	
+	var html = $("#songContent").html();
+	
+	html += "<td>" + $("#" + name).html() + "</td>";
+	console.debug("Font " + name + " : " + html);
+	$("#songContent").html(html);
+}
+
+function clearSong() {
+	$("#songContent").html("");
 }
 </script>
 
@@ -71,6 +122,579 @@ function play(name) {
 <audio preload="auto" id="sound-zprd"><source src="lib/snd/zprd.mp3"></source></audio>
 <audio preload="auto" id="sound-zex"><source src="lib/snd/zex.mp3"></source></audio>
 <audio preload="auto" id="sound-zsl"><source src="lib/snd/zsl.mp3"></source></audio>
+
+<div id="alphabets">
+<div id="a">
+<td>
+	<div id="hfa" class="xylofont alphabet" onmouseover="play('a')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="mid-mid-line"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="b">
+<td>
+	<div id="hfb" class="xylofont alphabet" onmouseover="play('b')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="mid-mid-line"></div>
+			<div id="bottom-mid-line"></div>
+			<div id="right-half-mid-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle3"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="c">
+<td>
+	<div id="hfc" class="xylofont alphabet" onmouseover="play('c')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-right-line"></div>
+			<div id="bottom-right-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="d">
+<td>
+	<div id="hfd" class="xylofont alphabet" onmouseover="play('d')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="bottom-mid-line"></div>
+			<div id="right-half-mid-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle3"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="e">
+<td>
+	<div id="hfe" class="xylofont alphabet" onmouseover="play('e')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-right-line"></div>
+			<div id="mid-right-line"></div>
+			<div id="bottom-right-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="f">
+<td>
+	<div id="hff" class="xylofont alphabet" onmouseover="play('f')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-right-line"></div>
+			<div id="mid-mid-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="g">
+<td>
+	<div id="hfg" class="xylofont alphabet" onmouseover="play('g')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="bottom-mid-line"></div>
+			<div id="right-half-bottom-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle3"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="h">
+<td>
+	<div id="hfh" class="xylofont alphabet" onmouseover="play('h')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="mid-mid-line"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="i">
+<td>
+	<div id="hfi" class="xylofont alphabet" onmouseover="play('i')">
+		<div id="mid-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="j">
+<td>
+	<div id="hfj" class="xylofont alphabet" onmouseover="play('j')">
+		<div id="mid-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="bottom-mid-left-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="k">
+<td>
+	<div id="hfk" class="xylofont alphabet" onmouseover="play('k')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="k-top-line"></div>
+			<div id="k-bottom-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="l">
+<td>
+	<div id="hfl" class="xylofont alphabet" onmouseover="play('l')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="bottom-right-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="m">
+<td>
+	<div id="hfm" class="xylofont alphabet" onmouseover="play('m')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+			</div>
+			<div id="m-left-line"></div>
+			<div id="m-right-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="n">
+<td>
+	<div id="hfn" class="xylofont alphabet" onmouseover="play('n')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+			</div>
+			<div id="n-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="o">
+<td>
+	<div id="hfo" class="xylofont alphabet" onmouseover="play('o')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="bottom-mid-line"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="p">
+<td>
+	<div id="hfp" class="xylofont alphabet" onmouseover="play('p')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="mid-mid-line"></div>
+			<div id="right-half-top-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle3"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="q">
+<td>
+	<div id="hfq" class="xylofont alphabet" onmouseover="play('q')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="bottom-mid-line"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+			</div>
+			<div id="qu_leg"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="r">
+<td>
+	<div id="hfr" class="xylofont alphabet" onmouseover="play('r')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="mid-mid-line"></div>
+			<div id="right-half-top-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle3"></div>
+			</div>
+			<div id="r-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="s">
+<td>
+	<div id="hfs" class="xylofont alphabet" onmouseover="play('s')">
+		<div id="left-half-top-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle3"></div>
+			<div id="top-right-line"></div>
+			<div id="mid-mid-line"></div>
+			<div id="bottom-left-line"></div>
+			<div id="right-half-bottom-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle3"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="t">
+<td>
+	<div id="hft" class="xylofont alphabet" onmouseover="play('t')">
+		<div id="mid-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-left-short-line"></div>
+			<div id="top-right-short-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="u">
+<td>
+	<div id="hfu" class="xylofont alphabet" onmouseover="play('u')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="bottom-mid-line"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+			</div>
+			<div id="qu_leg"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="v">
+<td>
+	<div id="hfv" class="xylofont alphabet" onmouseover="play('v')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="bottom-mid-line"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="w">
+<td>
+	<div id="hfw" class="xylofont alphabet" onmouseover="play('w')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+			</div>
+			<div id="w-left-line"></div>
+			<div id="w-right-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="x">
+<td>
+	<div id="hfx" class="xylofont alphabet" onmouseover="play('x')">
+		<div id="rotated-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="x-left-line"></div>
+			<div id="x-right-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="y">
+<td>
+	<div id="hfy" class="xylofont alphabet" onmouseover="play('y')">
+		<div id="mid-half-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle3"></div>
+			<div id="y-left-line"></div>
+			<div id="y-right-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="z">
+<td>
+	<div id="hfz" class="xylofont alphabet" onmouseover="play('z')">
+		<div id="rotated-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="z-top-line"></div>
+			<div id="z-bottom-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="0">
+<td>
+	<div id="hf0" class="xylofont alphabet" onmouseover="play('0')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="bottom-mid-line"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+					
+			</div>
+			<div id="zero-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="1">
+<td>
+	<div id="hf1" class="xylofont alphabet" onmouseover="play('1')">
+		<div id="mid-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-left-short-line"></div>
+			<div id="bottom-left-short-line"></div>
+			<div id="bottom-right-short-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="2">
+<td>
+	<div id="hf2" class="xylofont flip alphabet" onmouseover="play('2')">
+		<div id="left-half-top-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle3"></div>
+			<div id="top-right-line"></div>
+			<div id="mid-mid-line"></div>
+			<div id="bottom-left-line"></div>
+			<div id="right-half-bottom-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle3"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="3">
+<td>
+	<div id="hf3" class="xylofont flip alphabet" onmouseover="play('3')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-right-line"></div>
+			<div id="mid-right-line"></div>
+			<div id="bottom-right-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="4">
+<td>
+	<div id="hf4" class="xylofont alphabet" onmouseover="play('4')">
+		<div id="rotated-bar4">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="z-bottom-line"></div>
+			<div id="vertical-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="5">
+<td>
+	<div id="hf5" class="xylofont alphabet" onmouseover="play('5')">
+		<div id="left-half-top-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle3"></div>
+			<div id="top-right-line"></div>
+			<div id="mid-mid-line"></div>
+			<div id="bottom-left-line"></div>
+			<div id="right-half-bottom-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle3"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="6">
+<td>
+	<div id="hf6" class="xylofont alphabet" onmouseover="play('6')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-right-line"></div>
+			<div id="mid-mid-line"></div>
+			<div id="bottom-mid-line"></div>
+			<div id="right-half-bottom-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle3"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="7">
+<td>
+	<div id="hf7" class="xylofont upside-down alphabet" onmouseover="play('7')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="bottom-right-line"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="8">
+<td>
+	<div id="hf8" class="xylofont alphabet" onmouseover="play('8')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="mid-right-line"></div>
+			<div id="bottom-mid-line"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="9">
+<td>
+	<div id="hf9" class="xylofont flip alphabet" onmouseover="play('9')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="mid-mid-line"></div>
+			<div id="right-half-top-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle3"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="zedsh">
+<td>
+	<div id="hfemdash" class="xylofont rotate90 zoom-sm" onmouseover="play('zedsh')">
+		<div id="mid-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="zprd">
+<td>
+	<div id="hfperiod" class="xylofont rotate90 zoom-sm" onmouseover="play('zprd')">
+		<div id="mid-quarter-bar">
+			<div id="bar-circle4"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="zex">
+<td>
+	<div id="hfex" class="xylofont zoom-sm" onmouseover="play('zex')">
+		<div id="top-half-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle3"></div>
+		</div>
+		<div id="mid-quarter-bar-ex">
+			<div id="bar-circle4"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="zsl">
+<td>
+	<div id="hfslash" class="xylofont zoom-sm" onmouseover="play('zsl')">
+		<div id="rotated-bar4">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+		</div>
+	</div>
+</td>
+</div>
+<div id="sp">
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+</div>
+</div>
+
+<!-- start -->
 
 <center>
 
@@ -482,6 +1106,67 @@ function play(name) {
 			</div>
 		</div>
 	</div>
+</td>
+<td>
+	<div id="hfs" class="xylofont zoom-xs" onmouseover="play('s')">
+		<div id="left-half-top-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle3"></div>
+			<div id="top-right-line"></div>
+			<div id="mid-mid-line"></div>
+			<div id="bottom-left-line"></div>
+			<div id="right-half-bottom-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle3"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</tr>
+</table>
+</a>
+
+<a href="#lab">
+<table class="menu" cellspacing="5px">
+<tr>
+<td>
+	<div id="hfl" class="xylofont zoom-xs" onmouseover="play('l')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="bottom-right-line"></div>
+		</div>
+	</div>
+</td>
+<td>
+	<div id="hfa" class="xylofont zoom-xs" onmouseover="play('a')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="mid-mid-line"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+			</div>
+		</div>
+	</div>
+</td>
+<td>
+	<div id="hfb" class="xylofont zoom-xs" onmouseover="play('b')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="mid-mid-line"></div>
+			<div id="bottom-mid-line"></div>
+			<div id="right-half-mid-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle3"></div>
+			</div>
+		</div>
+	</div>
+</td>
 </td>
 <td>
 	<div id="hfs" class="xylofont zoom-xs" onmouseover="play('s')">
@@ -2070,20 +2755,6 @@ function play(name) {
 	</div>
 </td>
 <td>
-	<div id="hfd" class="xylofont zoom-sm" onmouseover="play('d')">
-		<div id="left-bar">
-			<div id="bar-circle1"></div>
-			<div id="bar-circle2"></div>
-			<div id="top-mid-line"></div>
-			<div id="bottom-mid-line"></div>
-			<div id="right-half-mid-bar">
-				<div id="bar-circle1"></div>
-				<div id="bar-circle3"></div>
-			</div>
-		</div>
-	</div>
-</td>
-<td>
 	<div id="hfperiod" class="xylofont rotate90 zoom-xs" onmouseover="play('zprd')">
 		<div id="mid-quarter-bar">
 			<div id="bar-circle4"></div>
@@ -2912,15 +3583,6 @@ function play(name) {
 		</div>
 	</div>
 </td>
-<td>
-	<div id="hfj" class="xylofont song" onmouseover="play('j')">
-		<div id="mid-bar">
-			<div id="bar-circle1"></div>
-			<div id="bar-circle2"></div>
-			<div id="bottom-mid-left-line"></div>
-		</div>
-	</div>
-</td>
 </tr><tr>
 <td>
 	<div id="hfv" class="xylofont song" onmouseover="play('v')">
@@ -2991,16 +3653,6 @@ function play(name) {
 	</div>
 </td>
 </tr><tr>
-<td>
-	<div id="hft" class="xylofont song" onmouseover="play('t')">
-		<div id="mid-bar">
-			<div id="bar-circle1"></div>
-			<div id="bar-circle2"></div>
-			<div id="top-left-short-line"></div>
-			<div id="top-right-short-line"></div>
-		</div>
-	</div>
-</td>
 <td>
 	<div id="hft" class="xylofont song" onmouseover="play('t')">
 		<div id="mid-bar">
@@ -3904,8 +4556,271 @@ function play(name) {
 <br/><br/><br/><br/>
 </td></tr></table> <!-- end song section -->
 
-<br/><br/><br/><br/><br/>
+<br/><br/><br/>
+<a name="lab">
+<br/><br/>
 
+<table class="lab-section"><tr><td align="center" valign="middle"> <!-- start lab section -->
+<br/><br/><br/>
+
+<table cellspacing="5px">
+<tr>
+<td>
+	<div id="hfx" class="xylofont zoom-xs" onmouseover="play('x')">
+		<div id="rotated-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="x-left-line"></div>
+			<div id="x-right-line"></div>
+		</div>
+	</div>
+</td>
+<td>
+	<div id="hfy" class="xylofont zoom-xs" onmouseover="play('y')">
+		<div id="mid-half-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle3"></div>
+			<div id="y-left-line"></div>
+			<div id="y-right-line"></div>
+		</div>
+	</div>
+</td>
+<td>
+	<div id="hfl" class="xylofont zoom-xs" onmouseover="play('l')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="bottom-right-line"></div>
+		</div>
+	</div>
+</td>
+<td>
+	<div id="hfo" class="xylofont zoom-xs" onmouseover="play('o')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="bottom-mid-line"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+			</div>
+		</div>
+	</div>
+</td>
+<td>
+	<div id="hff" class="xylofont zoom-xs" onmouseover="play('f')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-right-line"></div>
+			<div id="mid-mid-line"></div>
+		</div>
+	</div>
+</td>
+<td>
+	<div id="hfo" class="xylofont zoom-xs" onmouseover="play('o')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="bottom-mid-line"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+			</div>
+		</div>
+	</div>
+</td>
+<td>
+	<div id="hfn" class="xylofont zoom-xs" onmouseover="play('n')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+			</div>
+			<div id="n-line"></div>
+		</div>
+	</div>
+</td>
+<td>
+	<div id="hft" class="xylofont zoom-xs" onmouseover="play('t')">
+		<div id="mid-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-left-short-line"></div>
+			<div id="top-right-short-line"></div>
+		</div>
+	</div>
+</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>
+	<div id="hfl" class="xylofont zoom-xs" onmouseover="play('l')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="bottom-right-line"></div>
+		</div>
+	</div>
+</td>
+<td>
+	<div id="hfa" class="xylofont zoom-xs" onmouseover="play('a')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="mid-mid-line"></div>
+			<div id="right-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle2"></div>
+			</div>
+		</div>
+	</div>
+</td>
+<td>
+	<div id="hfb" class="xylofont zoom-xs" onmouseover="play('b')">
+		<div id="left-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle2"></div>
+			<div id="top-mid-line"></div>
+			<div id="mid-mid-line"></div>
+			<div id="bottom-mid-line"></div>
+			<div id="right-half-mid-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle3"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</td>
+<td>
+	<div id="hfs" class="xylofont zoom-xs" onmouseover="play('s')">
+		<div id="left-half-top-bar">
+			<div id="bar-circle1"></div>
+			<div id="bar-circle3"></div>
+			<div id="top-right-line"></div>
+			<div id="mid-mid-line"></div>
+			<div id="bottom-left-line"></div>
+			<div id="right-half-bottom-bar">
+				<div id="bar-circle1"></div>
+				<div id="bar-circle3"></div>
+			</div>
+		</div>
+	</div>
+</td>
+</tr>
+</table>
+
+<br/><br/><br/>
+
+<table cellspacing="5px"><tr id="fontContent"></tr></table>
+
+<table class="keyboard" cellspacing="5px" bgcolor="white">
+<br/><br/>
+<tr>
+	<td onclick="addFont('0')">0</td>
+	<td onclick="addFont('1')">1</td>
+	<td onclick="addFont('2')">2</td>
+	<td onclick="addFont('3')">3</td>
+	<td onclick="addFont('4')">4</td>
+	<td onclick="addFont('5')">5</td>
+	<td onclick="addFont('6')">6</td>
+	<td onclick="addFont('7')">7</td>
+	<td onclick="addFont('8')">8</td>
+	<td onclick="addFont('9')">9</td>
+</tr>
+<tr>
+	<td onclick="addFont('q')">Q</td>
+	<td onclick="addFont('w')">W</td>
+	<td onclick="addFont('e')">E</td>
+	<td onclick="addFont('r')">R</td>
+	<td onclick="addFont('t')">T</td>
+	<td onclick="addFont('y')">Y</td>
+	<td onclick="addFont('u')">U</td>
+	<td onclick="addFont('i')">I</td>
+	<td onclick="addFont('o')">O</td>
+	<td onclick="addFont('p')">P</td>
+	<td onclick="clearFont()">Clear</td>
+</tr>
+<tr>
+	<td onclick="addFont('a')">A</td>
+	<td onclick="addFont('s')">S</td>
+	<td onclick="addFont('d')">D</td>
+	<td onclick="addFont('f')">F</td>
+	<td onclick="addFont('g')">G</td>
+	<td onclick="addFont('h')">H</td>
+	<td onclick="addFont('j')">J</td>
+	<td onclick="addFont('k')">K</td>
+	<td onclick="addFont('l')">L</td>
+	<td onclick="addFont('zedsh')">-</td>
+
+</tr>
+<tr>
+	<td onclick="addFont('z')">Z</td>
+	<td onclick="addFont('x')">X</td>
+	<td onclick="addFont('c')">C</td>
+	<td onclick="addFont('v')">V</td>
+	<td onclick="addFont('b')">B</td>
+	<td onclick="addFont('n')">N</td>
+	<td onclick="addFont('m')">M</td>
+	<td onclick="addFont('zprd')">.</td>
+	<td onclick="addFont('zex')">!</td>
+	<td onclick="addFont('zsl')">/</td>
+	<td onclick="addFont('sp')">SP</td>
+</tr>
+</table>
+
+<br/><br/><br/>
+
+<table cellspacing="5px"><tr id="songContent"></tr></table>
+
+<table class="piano-keyboard" cellspacing="5px" bgcolor="white">
+<br/><br/>
+<tr>
+<td>
+<img src="lib/img/piano-keyboard.png" alt="" usemap="#Map" />
+<map name="Map" id="Map">
+    <area alt="" title="" href="javascript:addSong('h')" onclick="play('h')" shape="rect" coords="3,67,39,124" />
+    <area alt="" title="" href="javascript:addSong('i')" onclick="play('i')" shape="rect" coords="32,1,50,64" />
+    <area alt="" title="" href="javascript:addSong('j')" onclick="play('j')" shape="rect" coords="42,67,79,125" />
+    <area alt="" title="" href="javascript:addSong('k')" onclick="play('k')" shape="rect" coords="72,0,92,64" />
+    <area alt="" title="" href="javascript:addSong('l')" onclick="play('l')" shape="rect" coords="83,67,119,125" />
+    <area alt="" title="" href="javascript:addSong('m')" onclick="play('m')" shape="rect" coords="125,67,159,126" />
+    <area alt="" title="" href="javascript:addSong('n')" onclick="play('n')" shape="rect" coords="151,1,173,63" />
+    <area alt="" title="" href="javascript:addSong('o')" onclick="play('o')" shape="rect" coords="164,67,199,125" />
+    <area alt="" title="" href="javascript:addSong('p')" onclick="play('p')" shape="rect" coords="192,1,210,62" />
+    <area alt="" title="" href="javascript:addSong('q')" onclick="play('q')" shape="rect" coords="203,67,239,126" />
+    <area alt="" title="" href="javascript:addSong('r')" onclick="play('r')" shape="rect" coords="232,2,251,62" />
+    <area alt="" title="" href="javascript:addSong('s')" onclick="play('s')" shape="rect" coords="244,67,279,127" />
+    <area alt="" title="" href="javascript:addSong('t')" onclick="play('t')" shape="rect" coords="282,67,319,127" />
+    <area alt="" title="" href="javascript:addSong('u')" onclick="play('u')" shape="rect" coords="311,1,331,63" />
+    <area alt="" title="" href="javascript:addSong('v')" onclick="play('v')" shape="rect" coords="324,66,359,126" />
+    <area alt="" title="" href="javascript:addSong('w')" onclick="play('w')" shape="rect" coords="350,1,371,64" />
+    <area alt="" title="" href="javascript:addSong('x')" onclick="play('x')" shape="rect" coords="364,69,399,126" />
+    <area alt="" title="" href="javascript:addSong('y')" onclick="play('y')" shape="rect" coords="404,68,440,126" />
+    <area alt="" title="" href="javascript:addSong('z')" onclick="play('z')" shape="rect" coords="432,0,452,63" />
+    <area alt="" title="" href="javascript:addSong('0')" onclick="play('0')" shape="rect" coords="444,68,479,127" />
+    <area alt="" title="" href="javascript:addSong('1')" onclick="play('1')" shape="rect" coords="470,1,492,64" />
+    <area alt="" title="" href="javascript:addSong('2')" onclick="play('2')" shape="rect" coords="483,67,520,127" />
+    <area alt="" title="" href="javascript:addSong('3')" onclick="play('3')" shape="rect" coords="512,0,532,64" />
+    <area alt="" title="" href="javascript:addSong('4')" onclick="play('4')" shape="rect" coords="523,67,560,126" />
+    <area alt="" title="" href="javascript:addSong('5')" onclick="play('5')" shape="rect" coords="566,67,602,125" />
+    <area alt="" title="" href="javascript:addSong('6')" onclick="play('6')" shape="rect" coords="591,2,610,61" />
+</map>
+</td>
+<td valign="top">
+<table><tr><td onclick="clearSong()" style="border: 1px solid; padding: 5px; background-color: lightgray; font-weight: bold; font-size: 1.1em;">Clear</td></tr></table>
+</td>
+</tr>
+</table>
+
+<br/><br/><br/><br/>
+</td></tr></table> <!-- end lab section -->
+
+<br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/>
 </center>
 </body>
 </html>
