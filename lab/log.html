@@ -1,0 +1,149 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+//
+// Log Pattern 1
+//
+
+function runLog() {
+	var i, j, z;
+	z = 2;
+	for (i=0; i<50; i++) {
+		var pattern = i<10 ? "0" + i + " " : i + " ";
+		for (j=0; j<80; j++) {
+			if (j % z == 0)
+				pattern += '*';
+			else
+				pattern += '-';
+		}
+		console.log(pattern);
+		z += 1;
+	}
+}
+
+//
+// Log Pattern 2
+//
+
+function runLog2() {
+	var i, j, z;
+	var z = 2;
+	var comp1 = $("#comp1").val();
+	var comp2 = $("#comp2").val();
+	for (i=0; i<40; i++) {
+		var pattern = i<10 ? "0" + i + " " : i + " ";
+		//alert(pattern);
+		pattern += line_gen(i % 2, comp1, comp2);
+		console.log(pattern);
+		z += 1;
+	}
+}
+
+function line_gen(idx, comp1, comp2) {
+	var length = 80;
+	var pattern = "";
+	if (idx == 0 ) {
+		for (j=0; j<length; j++) {
+			if (j % 2 == 0)
+				pattern += comp1;
+			else
+				pattern += comp2;
+		}
+		return pattern;
+	} else if (idx == 1) {
+		for (j=0; j<length; j++) {
+			if (j % 2 == 0)
+				pattern += comp2;
+			else
+				pattern += comp1;
+		}	
+		return pattern;
+	} else if (idx == 3) {
+		return pattern;
+	}
+}
+	
+//
+// Log Pattern 3
+//
+
+pattern1 = [[0,0,1,0],[0,2,0,3],[1,0,0,0],[0,3,0,2]];
+pattern2 = [[0,0,4,4,0],[0,4,0,0,4],[4,0,0,0,0],[4,0,0,0,0],[0,4,0,0,4]];
+pattern3 = [[0,0,0,5,0,0],[0,0,2,0,3,0],[0,2,0,0,0,3],[5,0,0,0,0,0]];
+
+function runLog3() {
+    var pat_x = 20;
+    var pat_y = 5;
+    var x, y, i, j, no;
+	
+	var myRadio = $('input[name=pattern]');
+	var checkedValue = myRadio.filter(':checked').val();
+	   
+	if (checkedValue == 1)
+		pattern = pattern1;
+	else if (checkedValue == 2)
+		pattern = pattern2
+	else if (checkedValue == 3)
+		pattern = pattern3
+
+	no = 0;
+    for (y=0; y<5; y++) {  
+		for (j=0; j<pattern.length; j++) {
+			var line = no < 10 ? "0" + (no++) + ": " : (no++) + ": ";
+			for (x=0; x<pat_x; x++) {                                              
+				for (i=0; i<pattern[j].length; i++) {
+					line += get_comp(pattern[j][i]);
+				}                             
+			}
+			console.log(line);
+		}	
+    }
+}
+ 
+function get_comp(idx) {
+    if (idx == 0) return " ";
+    else if (idx == 1) return "-";
+    else if (idx == 2) return "/";
+    else if (idx == 3) return "\\";
+    else if (idx == 4) return "*";
+    else if (idx == 5) return "+";
+}	
+
+</script>
+</head>
+<body>
+
+<center>
+<h1>Log Pattern Generator</h1>
+
+<table border="1" cellspacing="0px" cellpadding="5px">
+<tr>
+<td>
+<input type="button" onclick="runLog()" value="Pattern 1">
+</td>
+<td>Ripples of sunlight</td>
+</tr>
+<tr>
+<td>
+<input type="button" onclick="runLog2()" value="Pattern 2">
+<input type="text" id="comp1" size="5" value="/"/>
+<input type="text" id="comp2" size="5" value="\"/>
+</td>
+<td>Simple pattern generator. Please, provide two string values.</td>
+</tr>
+<tr>
+<td>
+<input type="button" onClick="runLog3()" value="Pattern 3">
+<input type="radio" name="pattern" value="1" checked>Pattern1
+<input type="radio" name="pattern" value="2">Pattern2
+<input type="radio" name="pattern" value="3">Pattern3
+</td>
+<td>Three pre-defined patterns</td>
+</tr>
+</table>
+
+</center>
+
+</body>
+</html>
