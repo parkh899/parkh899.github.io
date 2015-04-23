@@ -1,0 +1,73 @@
+<html>
+<head>
+
+<style>
+img { zoom: 130%; }
+
+#randomText {font-family: Sans-serif; color: dimgray; font-weight: bold; font-size: 4em}
+
+</style>
+<script src="lib/js/jquery-2.1.3.min.js"></script>
+<script>
+var texts = ['Fantastic!', "Delicious!", "Wow!", "Yummy!", "Mouth Watering!"];
+var sounds = ['CartoonEnlarge', 'CartoonSlip', 'CrowdLaugh', 'YellingYeeHa'];
+var fruits = ['apple', 'kiwi', 'orange', 'papaya', 'peach'];
+
+$(function() {
+	generateImage();
+});
+
+function generateImage() {
+	var zoomVal = ((Math.floor(Math.random() * 16) + 5) * 10) + "%";
+	$("#randomText").html(getRandomText());
+	$("#randomImage").attr('src', 'lib/img/' + getRandomImage() + '.png');
+	$('img').css("zoom", zoomVal);
+	play(getRandomSound());
+}
+
+function getRandomText() {
+	return texts[Math.floor(Math.random()*texts.length)];
+}
+
+function getRandomImage() {
+	return fruits[Math.floor(Math.random()*fruits.length)];
+}
+
+function getRandomSound() {
+	return sounds[Math.floor(Math.random()*sounds.length)];
+}
+
+function play(name) {
+	$("#" + name)[0].play();
+}
+
+</script>
+
+</head>
+<body bgcolor="white">
+
+<audio preload="auto" id="CartoonEnlarge"><source src="lib/snd/CartoonEnlarge.mp3"></source></audio>
+<audio preload="auto" id="CartoonSlip"><source src="lib/snd/CartoonSlip.mp3"></source></audio>
+<audio preload="auto" id="CrowdLaugh"><source src="lib/snd/CrowdLaugh.mp3"></source></audio>
+<audio preload="auto" id="SadTrombone"><source src="lib/snd/SadTrombone.mp3"></source></audio>
+<audio preload="auto" id="YellingYeeHa"><source src="lib/snd/YellingYeeHa.mp3"></source></audio>
+
+<table width="100%" height="100%"><tr><td align="center" valign="middle">
+
+<table cellspacing="10px">
+<tr>
+	<td align="center">
+		<span id="randomText"></span>
+	</td>
+</tr>
+<tr>
+	<td align="center">
+		<a href="" onclick="generateImage()"><img id="randomImage"/></a>
+	</td>
+</tr>
+</table>
+
+</td></tr></table>
+
+</body>
+</html>
