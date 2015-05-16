@@ -314,14 +314,14 @@ var newEntries =[
 	{"id": "np22",
 	 "year": 2015,
 	 "vertical": "yes",
-	 "title": "",
+	 "title": "Acting at the riverbank",
 	 "image": "new/place22.jpg",	
 	 "journal": "journal 22 here."
 	},
 	{"id": "np23",
 	 "year": 2015,
 	 "vertical": "no",
-	 "title": "Acting at the riverbank",
+	 "title": "",
 	 "image": "new/place23.jpg",	
 	 "journal": "Coming home to six pack laughs with this one. So thankful for her. One year of living with her has defintely grown our frienship in ways I never knew before. What started off as just a <i> Hello my name is.. </i> at a dorm event led us to being the best friends now. Oh how much the times have past and we have changed. Excited to see what is in store for us in the next few years as we witness eachothers growth."
 	},
