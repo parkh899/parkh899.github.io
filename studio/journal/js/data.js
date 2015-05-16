@@ -252,7 +252,7 @@ var newEntries =[
 	 "vertical": "no",
 	 "title": "Home Sweet Home",
 	 "image": "new/place9.jpg",
-	 "journal": "It is fall once again. Looking at the change in colors and how the seasons change, lets me look back/reflect on myself and how I have changed as well. Already it is nearing the end of fall semester of my Sophomore year in college. Where did the time go? No one knows.. As I am looking across my backyard at this scenery, a sense of familiarity wahses over me. Throughout my highschool years, I believe every year around this time, I would come out here to see the colors of the leaves change. I guess it's much more meaningful to come to it again as I left for college. It's as if an absence in my heart is filled once again. I know that once I return back to New York City, I'll be nostalgic of this feeling once again."
+	 "journal": "It is fall once again. Looking at the change in colors and how the seasons change, lets me look back/reflect on myself and how I have changed as well. Already it is nearing the end of fall semester of my Sophomore year in college. Where did the time go? No one knows.. As I am looking across my backyard at this scenery, a sense of familiarity washes over me. Throughout my high school years, I believe every year around this time, I would come out here to see the colors of the leaves change. I guess it's much more meaningful to come to it again as I left for college. It's as if an absence in my heart is filled once again. I know that once I return back to New York City, I'll be nostalgic of this feeling once again."
 	},
 	{"id": "np11",
 	 "year": 2015,
@@ -302,14 +302,14 @@ var newEntries =[
 	 "vertical": "no",
 	 "title": "Happy New Years",
 	 "image": "new/place17.jpg",	
-	 "journal": "Spent New Years Eve with the parents and made dumplings. It is times like these that I truly cherish. Nothing makes me feel more at home than quality time with my parents. Seeing all of our hands in sync as we made each and every dumpling fasincates me. After making 3 batches, my mom boiled some for me to taste. Truly, there is nothing more delicious than my mother's cooking. <i> Take some dumplings when you go back to New York City </i> my mom would say.."
+	 "journal": "Spent New Years Eve with the parents and made dumplings. It is times like these that I truly cherish. Nothing makes me feel more at home than quality time with my parents. Seeing all of our hands in sync as we made each and every dumpling fascinates me. After making 3 batches, my mom boiled some for me to taste. Truly, there is nothing more delicious than my mother's cooking. <i> Take some dumplings when you go back to New York City </i> my mom would say.."
 	},
 	{"id": "np18",
 	 "year": 2015,
 	 "vertical": "no",
 	 "title": "Inspiration",
 	 "image": "new/place18.jpg",	
-	 "journal": "Took my day off to come to Dashwook Books for a class assignment. Unexpectedly, I was so fascinated by the small store and endless amount of photobooks here. Defintely a place to come again on my own time to enjoy all the inspirational books."
+	 "journal": "Took my day off to come to Dashwook Books for a class assignment. Unexpectedly, I was so fascinated by the small store and endless amount of photo-books here. Definitely a place to come again on my own time to enjoy all the inspirational books."
 	},
 	{"id": "np22",
 	 "year": 2015,
@@ -321,9 +321,9 @@ var newEntries =[
 	{"id": "np23",
 	 "year": 2015,
 	 "vertical": "no",
-	 "title": "",
+	 "title": "My dear friend",
 	 "image": "new/place23.jpg",	
-	 "journal": "Coming home to six pack laughs with this one. So thankful for her. One year of living with her has defintely grown our frienship in ways I never knew before. What started off as just a <i> Hello my name is.. </i> at a dorm event led us to being the best friends now. Oh how much the times have past and we have changed. Excited to see what is in store for us in the next few years as we witness eachothers growth."
+	 "journal": "Coming home to six pack laughs with this one. So thankful for her. One year of living with her has definitely grown our friendship in ways I never knew before. What started off as just a <i> Hello my name is.. </i> at a dorm event led us to being the best friends now. Oh how much the times have past and we have changed. Excited to see what is in store for us in the next few years as we witness each others growth."
 	},
 	{"id": "np24",
 	 "year": 2015,
